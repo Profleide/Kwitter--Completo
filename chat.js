@@ -14,24 +14,25 @@ firebase.initializeApp(firebaseConfig);
 
 const nomeUsuario = localStorage.getItem("nomeUsuario");
 const nomeSala = localStorage.getItem("nomeSala");
-const setChatTags = new Set();
+var chatTags = [];
+const output = document.getElementById("output");
 
 getData();
-
 function getData() {
   firebase
-    .database()
-    .ref("/" + nomeSala)
-    .on("value", snapshot => {
-      console.log("Keys Changed");
-      snapshot.forEach(function (childSnapshot) {
+  .database()
+  .ref("/" + nomeSala)
+  .on("value", snapshot => {
+    chatTags = [];
+    console.log("Keys Changed");
+    snapshot.forEach(function (childSnapshot) {
         const childKey = childSnapshot.key;
         const childData = childSnapshot.val();
         if (childKey != "purpose") {
           const firebaseMsgId = childKey;
           const msgData = childData;
           // Inicio do código
-          console.log(msgData);
+          // console.log(msgData);
           const nome = msgData['name'];
           const msg = msgData['message'];
           const likes = msgData['like'];
@@ -51,11 +52,10 @@ function getData() {
             "</div>" +
             "</div></div>";
             
-            const row = nomeTag + msgTag;
-            setChatTags.add(row);
-            const output = Array.from(setChatTags).join("");
-            document.getElementById("output").innerHTML = output;
-            // Fim do código
+          const row = nomeTag + msgTag;
+          chatTags.push(row);
+          output.innerHTML = chatTags.join("");
+          // Fim do código
           }
         });
       });
@@ -71,8 +71,6 @@ function likeMsg(btnId) {
 }
 
 function send() {
-  document.getElementById("output").innerHTML = "";
-
   const msg = document.getElementById("msg").value;
   firebase.database().ref(nomeSala).push({
     name: nomeUsuario,
