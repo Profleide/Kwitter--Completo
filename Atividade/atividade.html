@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Prática</title>
+
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/css/bootstrap.min.css' integrity='sha512-siwe/oXMhSjGCwLn+scraPOWrJxHlUgMBMZXdPe2Tnk3I0x3ESCoLz7WZ5NTH6SZrywMY+PB1cjyqJ5jAluCOg==' crossorigin='anonymous'/>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.2.1/js/bootstrap.bundle.min.js' integrity='sha512-1TK4hjCY5+E9H3r5+05bEGbKGyK506WaDPfPe1s/ihwRjr6OtL43zJLzOFQ+/zciONEd+sp7LwrfOCnyukPSsg==' crossorigin='anonymous'></script>
+
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-firestore.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/live/3.1/firebase.js"></script>
+
+    <script src="atividade.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Atividade Prática</h1>
+
+      <div class="form-group">
+        <label>Nome de usuário:</label>
+        <input
+          type="text"
+          id="userName"
+          class="form-control"
+          placeholder="Nome de usuário"
+        />
+      </div>
+
+      <button class="btn btn-success" onclick="addUser()">
+        Adicionar nome de usuário
+      </button>
+    </div>
+  </body>
+</html>
