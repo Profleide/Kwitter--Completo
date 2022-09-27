@@ -41,7 +41,7 @@ function getData() {
           const msgTag =
             "<div class='row'>" +
             "<div class='col'>" +
-            "<h3 class='chatMsg'>" + msg + "</h3>" +
+            "<h5 class='chatMsg'>" + msg + "</h5>" +
             "</div>" +
             "<div class='col-auto'>" +
             "<button class='btn btn-info' id='" + firebaseMsgId + "' value='" + likes + "' onclick='likeMsg(this.id)' >" +
