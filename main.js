@@ -1,8 +1,12 @@
 function addUsuario() {
     let nomeUsuario = document.getElementById("nomeUsuario").value;
-    localStorage.setItem("nomeUsuario", nomeUsuario);
-    // window.location = "sala.html"
-    location = "sala.html"
+    if (nomeUsuario) {
+        localStorage.setItem("nomeUsuario", nomeUsuario);
+        // window.location = "sala.html"
+        location = "sala.html"
+    } else {
+        document.getElementById("label").innerHTML = "Digite um nome de usuário"
+    }
 }
 
 function logout() {
