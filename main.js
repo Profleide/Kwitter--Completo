@@ -1,5 +1,5 @@
 function addUsuario() {
-    let nomeUsuario = document.getElementById("nomeUsuario").value;
+    const nomeUsuario = document.getElementById("nomeUsuario").value;
     if (nomeUsuario) {
         localStorage.setItem("nomeUsuario", nomeUsuario);
         // window.location = "sala.html"
