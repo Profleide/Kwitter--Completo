@@ -77,8 +77,7 @@ function send() {
     message: msg,
     like: 0
   });
-
-  document.getElementById("msg").value = "";
-
-  console.log("Mensagem enviada: " + msg)
+	console.log("Mensagem enviada: " + msg)
+	
+	document.getElementById("msg").value = "";
 }
