@@ -13,7 +13,6 @@ const firebaseConfig = {
 firebase.initializeApp(firebaseConfig);
 
 const nomeUsuario = localStorage.getItem("nomeUsuario");
-var salas = [];
 
 document.getElementById("nomeUsuario").innerHTML = "Olá, " + nomeUsuario + "!";
 
